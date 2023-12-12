@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('guests', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_tamu');
+            $table->string('bertemu');
+            $table->string('asal_instansi');
+            $table->string('keperluan_tamu');
+            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
+            $table->bigInteger('telepon');
+            $table->dateTime('waktu_datang')->default(now());
+            $table->dateTime('kunjungan _berakhir')->nullable();
             $table->timestamps();
         });
     }
